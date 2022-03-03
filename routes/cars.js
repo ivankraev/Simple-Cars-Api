@@ -13,6 +13,7 @@ module.exports = router
 //Create
 router.post('/', verifyToken, async (req, res) => {
   const newCar = new Car(req.body)
+  console.log(newCar)
   try {
     const savedCar = await newCar.save()
     res.status(200).json(savedCar)

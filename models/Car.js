@@ -5,7 +5,7 @@ const userCarsSchema = new Schema(
   {
     firstname: { type: String },
     lastname: { type: String },
-    username: { type: String, required: true, unique: true },
+    username: { type: String, required: true, },
     password: { type: String, required: true },
     profilePic: { type: String, default: '' },
     isAdmin: { type: Boolean, default: false },
@@ -17,7 +17,7 @@ const userCarsSchemaNoPassword = new Schema(
   {
     firstname: { type: String },
     lastname: { type: String },
-    username: { type: String, required: true, unique: true },
+    username: { type: String, required: true },
     profilePic: { type: String, default: '' },
     isAdmin: { type: Boolean, default: false },
   },
@@ -26,7 +26,7 @@ const userCarsSchemaNoPassword = new Schema(
 
 const carSchema = Schema(
   {
-    make: { type: String, required: true, unique: true },
+    make: { type: String, required: true },
     model: { type: String },
     year: { type: Number },
     engineType: { type: String },
