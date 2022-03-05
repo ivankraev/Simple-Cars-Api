@@ -37,8 +37,8 @@ router.put('/:id', verifyToken, async (req, res) => {
 //DElete
 router.delete('/:id', verifyToken, async (req, res) => {
   try {
-    await Car.findByIdAndDelete(req.params.id)
-    res.status(200).json('Deleted')
+    const deletedCar = await Car.findByIdAndDelete(req.params.id)
+    res.status(200).json(deletedCar)
   } catch (err) {
     res.status(500).json(res)
   }
